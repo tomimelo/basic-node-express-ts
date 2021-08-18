@@ -1,0 +1,12 @@
+{
+  "name": "basic_node-express_typescript_server",
+  "version": "1.0.0",
+  "description": "Basic node express typescript server with error handling and logger",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
