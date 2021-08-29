@@ -46,9 +46,6 @@
         <li><a href="#installation">Installation</a></li>
         <li><a href="#build">Build</a></li>
         <li><a href="#development-server">Development server</a></li>
-        <ul>
-          <li><a href="#watch-file-changes">Watch file changes</a></li>
-        </ul>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -107,22 +104,19 @@ Run `tsc` to compile the project. The compiled files will be stored in the `dist
 
 ### Development server
 
-Run `npm start` to compile and run the server. Server will be running by default in `http://localhost:3000/`.
-
-### Watch file changes
-
-To watch for file changes and restart server automatically is recommended to install [nodemon](https://github.com/remy/nodemon). You can install it globally by running `npm install -g nodemon`.
+To watch for file changes and restart server automatically is recommended to install [nodemon](https://github.com/remy/nodemon) and [ts-node](https://github.com/TypeStrong/ts-node). You can install both globally by running `npm install -g nodemon ts-node` or locally as a dev dependency with `npm install nodemon ts-node -D`.
 <br>
-Open a terminal and run `tsc -w` to recompile automatically on file changes. On another terminal run `nodemon .` to rerun server on file changes.
+Open a terminal and run `nodemon src/app.ts` to rerun server automatically on file changes.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+Run `npm start` to compile and run the server. Server will be running by default in `http://localhost:3000/`.
 
 Folder structure
 Helpers functions
 Valid error codes
 Error handler
-
 
 <!-- CONTACT -->
 ## Contact
