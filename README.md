@@ -133,6 +133,7 @@ Project Link: [https://github.com/tomimelo/basic-node-express-ts](https://github
 * [Express](https://expressjs.com/)
 * [Config](https://github.com/lorenwest/node-config)
 * [Nodemon](https://github.com/remy/nodemon/)
+* [ts-node](https://github.com/TypeStrong/ts-node)
 * [README](https://github.com/othneildrew/Best-README-Template) template by @othneildrew
 
 
