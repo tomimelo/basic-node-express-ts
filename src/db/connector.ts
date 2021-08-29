@@ -5,5 +5,5 @@ const options = {
 }
 
 export default {
-    createConnection: async () => connect(options)
+    // createConnection: async () => connect(options) //Uncomment this line when db connection configured properly
 }

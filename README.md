@@ -14,7 +14,7 @@
   <h3 align="center">Basic Node Express Server</h3>
 
   <p align="center">
-    This is a basic structure in typescript for a node express server project.
+    This is a basic structure in typescript for a node express server project. It has error and exception handlers, loggers and database connector incorporated.
     <br />
     <a href="https://github.com/tomimelo/basic-node-express-ts"><strong>Explore the docs »</strong></a>
     <br />
@@ -117,6 +117,11 @@ Open a terminal and run `tsc -w` to recompile automatically on file changes. On 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+Folder structure
+Helpers functions
+Valid error codes
+Error handler
 
 
 <!-- CONTACT -->
