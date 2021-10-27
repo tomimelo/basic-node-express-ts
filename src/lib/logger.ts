@@ -30,7 +30,7 @@ export const consoleTransport = new winston.transports.Console({
 
 /** This transport prints the logs in daily rotate files */
 export const fileRotateTransport = new winston.transports.DailyRotateFile({
-    filename: `${__dirname}/../logs/app-%DATE%.log`,
+    filename: `${__dirname}/../../logs/app-%DATE%.log`,
     datePattern: 'YYYY-MM-DD',
     zippedArchive: true,
     maxSize: '20m',
