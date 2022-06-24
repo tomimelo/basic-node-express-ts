@@ -1,25 +1,35 @@
-import config from 'config';
-import Server from './api/server';
-import logger from './lib/logger';
-import { IConfig } from './models/config.interface';
-// import dbConnector from './db/connector'; //Uncomment this line when db connection configured properly
+import config from 'config'
+import { MadServer } from 'mad-server'
+import { serverConfig } from './api/server/server-config'
+import { AppConfig } from './config'
+import { ApplicationRunner } from './lib/runner/application-runner/application-runner'
+import { loggerAcquirer } from './utils/logger-acquirer/logger-acquirer'
+import { ExampleConnector } from './db/example-connector/example-connector';
+import { ExampleConnectorConfig } from './db/example-connector/example-connector-config';
 
-const log = logger.child({ name: 'app.ts' });
-const environment: string = config.get('env');
-log.info(`Starting app with environment: ${environment}`);
+const dbConfig = config.get<AppConfig['db']>('db')
+const environment = config.get<AppConfig['env']>('env');
 
-(async () => {
-    try {
-        const port: any = process.env.PORT || config.get<IConfig['api']>('api').port;
+const httpServer = new MadServer(serverConfig)
+const logger = loggerAcquirer.acquire()
 
-        log.info('Connecting database...');
-        // await dbConnector.createConnection(); //Uncomment this line when db connection configured properly
-        log.info('✓ Database connected');
-        log.info('Starting server...');
-        const server = new Server(port);
-        server.start();
-    } catch (e) {
-        log.error(e);
-        process.exit(1);
-    }
-})();
+async function startFunction () {
+  logger.info(`Starting app with environment: ${environment}`)
+  await httpServer.start()
+  const dbConnectorConfig: ExampleConnectorConfig = {
+    host: dbConfig.host,
+    port: dbConfig.port,
+    user: dbConfig.user,
+    password: dbConfig.password,
+    options: dbConfig.options
+  }
+  const dbConnector = new ExampleConnector(dbConnectorConfig)
+  await dbConnector.connect()
+}
+
+try {
+    new ApplicationRunner().run(startFunction)
+} catch (error: any) {
+    logger.error(error.message);
+    process.exit(1);
+}

@@ -4,9 +4,23 @@
         "version": 1,
         "port": 3000
     },
+    "db": {
+        "host": "your-db-host",
+        "port": 1000,
+        "user": "your-db-user",
+        "password": "your-db-password",
+        "options": "your-db-options"
+    },
+    "auth": {
+        "user": "admin",
+        "password": "admin"
+    },
+    "jwt": {
+        "secret": "YOUR-JWT-SECRET",
+        "expiresIn": "15m",
+        "refreshTokenDaysUntilExpire": 5
+    },
     "logger": {
         "level": "debug"
-    },
-    "db": {
     }
 }
