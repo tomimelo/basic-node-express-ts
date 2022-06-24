@@ -7,23 +7,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tomimelo/basic-node-express-ts">
+  <a href="https://github.com/tomimelo/node-ts-mad-server">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Basic Node Express Server</h3>
+  <h3 align="center">Mad Server template</h3>
 
   <p align="center">
-    This is a basic structure in typescript for a node express server project. It has error and exception handlers, loggers and database connector incorporated.
+    This is a basic http server in typescript for a node project based in express. It has error and exception handlers, loggers, services, repositories and database connector incorporated. Supports class based controllers
     <br />
-    <a href="https://github.com/tomimelo/basic-node-express-ts"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tomimelo/node-ts-mad-server"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tomimelo/basic-node-express-ts">View Demo</a>
+    <a href="https://github.com/tomimelo/node-ts-mad-server">View Demo</a>
     ·
-    <a href="https://github.com/tomimelo/basic-node-express-ts/issues">Report Bug</a>
+    <a href="https://github.com/tomimelo/node-ts-mad-server/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tomimelo/basic-node-express-ts/issues">Request Feature</a>
+    <a href="https://github.com/tomimelo/node-ts-mad-server/issues">Request Feature</a>
   </p>
 </p>
 
@@ -64,8 +64,9 @@
 ### Built With
 
 * [Node.js](https://nodejs.org/)
-* [Express](https://expressjs.com/)
 * [Typescript](https://www.typescriptlang.org/)
+* [Mad-Server](https://github.com/tomimelo/mad-server)
+* [Mad-Logger](https://github.com/tomimelo/mad-logger)
 
 
 <!-- GETTING STARTED -->
@@ -91,7 +92,7 @@ You will need a copy of [Node.js](https://nodejs.org/es/) as an environment to r
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/tomimelo/basic-node-express-ts.git
+   git clone https://github.com/tomimelo/node-ts-mad-server.git
    ```
 2. Install NPM packages
    ```sh
@@ -100,13 +101,13 @@ You will need a copy of [Node.js](https://nodejs.org/es/) as an environment to r
 
 ### Compilation
 
-Run `tsc` to compile the project. The compiled files will be stored in the `dist/` directory.
+Run `tsc` to compile the project. The compiled files will be stored in the `build/` directory.
 
 ### Development server
 
 To watch for file changes and restart server automatically is recommended to install [nodemon](https://github.com/remy/nodemon) and [ts-node](https://github.com/TypeStrong/ts-node). You can install both globally by running `npm install -g nodemon ts-node` or locally as a dev dependency with `npm install nodemon ts-node -D`.
 <br>
-Open a terminal and run `nodemon src/app.ts` to rerun server automatically on file changes.
+Open a terminal on root directory and run `nodemon` to rerun server automatically on file changes.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -121,9 +122,9 @@ Error handler
 <!-- CONTACT -->
 ## Contact
 
-Tomás Melone - email
+Tomás Melone - tomasmelone@hotmail.com
 
-Project Link: [https://github.com/tomimelo/basic-node-express-ts](https://github.com/tomimelo/basic-node-express-ts)
+Project Link: [https://github.com/tomimelo/node-ts-mad-server](https://github.com/tomimelo/node-ts-mad-server)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
@@ -131,6 +132,8 @@ Project Link: [https://github.com/tomimelo/basic-node-express-ts](https://github
 * [Node.js](https://nodejs.org/)
 * [Typescript](https://www.typescriptlang.org/)
 * [Express](https://expressjs.com/)
+* [Mad-Server](https://github.com/tomimelo/mad-server)
+* [Mad-Logger](https://github.com/tomimelo/mad-logger)
 * [Config](https://github.com/lorenwest/node-config)
 * [Nodemon](https://github.com/remy/nodemon/)
 * [ts-node](https://github.com/TypeStrong/ts-node)
@@ -141,12 +144,12 @@ Project Link: [https://github.com/tomimelo/basic-node-express-ts](https://github
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[forks-shield]: https://img.shields.io/github/forks/tomimelo/basic-node-express-ts.svg?style=for-the-badge
-[forks-url]: https://github.com/tomimelo/basic-node-express-ts/network/members
-[stars-shield]: https://img.shields.io/github/stars/tomimelo/basic-node-express-ts.svg?style=for-the-badge
-[stars-url]: https://github.com/tomimelo/basic-node-express-ts/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tomimelo/basic-node-express-ts.svg?style=for-the-badge
-[issues-url]: https://github.com/tomimelo/basic-node-express-ts/issues
+[forks-shield]: https://img.shields.io/github/forks/tomimelo/node-ts-mad-server.svg?style=for-the-badge
+[forks-url]: https://github.com/tomimelo/node-ts-mad-server/network/members
+[stars-shield]: https://img.shields.io/github/stars/tomimelo/node-ts-mad-server.svg?style=for-the-badge
+[stars-url]: https://github.com/tomimelo/node-ts-mad-server/stargazers
+[issues-shield]: https://img.shields.io/github/issues/tomimelo/node-ts-mad-server.svg?style=for-the-badge
+[issues-url]: https://github.com/tomimelo/node-ts-mad-server/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tomasmelone
 [product-screenshot]: images/screenshot.png
