@@ -1,11 +1,24 @@
-import { Router } from 'express';
 import { body } from 'express-validator';
-
+import { MadRouter } from 'mad-server'
 import exampleController from '../controllers/example.controller';
 
-const router = Router();
+const getExample = {
+  path: '/',
+  method: 'GET',
+  handler: exampleController.example
+}
 
-router.get('/', exampleController.example);
-router.post('/', [ body('var1').exists(), body('var2').isString()], exampleController.example);
+const postExample = {
+  path: '/',
+  method: 'POST',
+  middlewares: [body('var1').exists(), body('var2').isString()],
+  handler: exampleController.example
+}
 
-export default router;
+const router = new MadRouter({
+  basePath: '/example',
+  name: 'Example',
+  handlers: [getExample]
+})
+
+export default router
