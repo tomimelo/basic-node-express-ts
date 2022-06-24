@@ -1,14 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
-import expressLogger from '../../lib/expressLogger';
-import logger from '../../lib/logger';
+import { loggerAcquirer } from '../../utils/logger-acquirer/logger-acquirer';
 
 import { validToShowErrorMessage } from '../../utils/vaild-error-codes';
 
-const log = logger.child({namespace: 'exceptionHandler.ts'});
+const logger = loggerAcquirer.acquire().child('ExceptionHandler');
 
 export default {
     notFound: (req: Request, res: Response, next: NextFunction) => {
-        log.error(`${req.baseUrl} not found`);
+        logger.error(`${req.baseUrl} not found`);
         res.status(404).json({
             ok: false,
             error: {
@@ -18,7 +17,7 @@ export default {
         });
     },
     internal: (error: any, req: Request, res: Response, next: NextFunction) => {
-        log.error(`${error.message} - code: ${error.code} ${error.stack ? '\n'+error.stack : ""}`, expressLogger.getMeta(req));
+        logger.error(`${error.message} - code: ${error.code} ${error.stack ? '\n'+error.stack : ""}`);
         res.status(error.status || 500);
         res.json({
             ok: false,

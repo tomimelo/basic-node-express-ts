@@ -1,16 +1,13 @@
-import { Request, Response, NextFunction } from 'express';
-import expressLogger from '../../lib/expressLogger';
-import logger from '../../lib/logger';
-
+import { NextFunction, Request, Response } from 'express';
 import { createCustomError } from '../../utils/helpers-functions';
+import { loggerAcquirer } from '../../utils/logger-acquirer/logger-acquirer';
 
-const log = logger.child({ name: 'example.controller.ts'});
+const logger = loggerAcquirer.acquire().child('ExampleController');
 
 export default {
     example: async (req: Request, res: Response, next: NextFunction) => {
         try {
-            log.info('Example controller', expressLogger.getMeta(req));
-
+            logger.info('Example controller');
             res.json({ok: true, msg: 'Ok!'});
         } catch (err) {
             next(createCustomError(err, 1000));
