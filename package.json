@@ -25,7 +25,6 @@
   "author": "Tomás Melone",
   "license": "MIT",
   "dependencies": {
-    "auto-bind": "^5.0.1",
     "config": "^3.3.7",
     "cors": "^2.8.5",
     "express-mad-logger": "^1.0.0",
