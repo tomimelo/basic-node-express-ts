@@ -1,4 +1,4 @@
-export const validToShowErrorMessage = (code: number) => {
+export const validToShowErrorMessage = (code: number): boolean => {
   const codes = [
     40,
     1000

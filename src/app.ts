@@ -13,7 +13,7 @@ const environment = config.get<AppConfig['env']>('env')
 const httpServer = new MadServer(serverConfig)
 const logger = loggerAcquirer.acquire()
 
-async function startFunction () {
+async function startFunction (): Promise<void> {
   logger.info(`Starting app with environment: ${environment}`)
   await httpServer.start()
   const dbConnectorConfig: ExampleConnectorConfig = {

@@ -3,7 +3,7 @@ import { Example } from './example'
 
 export class ExampleRepository implements Repository<Example> {
   private collection: Array<Example> = []
-  constructor () {
+  public constructor () {
   }
 
   public async find (): Promise<ReadonlyArray<Example>> {

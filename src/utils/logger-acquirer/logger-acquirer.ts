@@ -1,9 +1,10 @@
-import { MadLoggerManager, Logger } from 'mad-logger'
+import { MadLoggerManager } from 'mad-logger'
 import path from 'path'
+import { Logger } from '../../types/logger'
 
 class LoggerAcquirer {
   private logger: Logger
-  constructor (config: any) {
+  public constructor (config: any) {
     const loggerManager = new MadLoggerManager()
     const consoleTransport = loggerManager.getConsoleTransport()
     const fileTransport = loggerManager.getFileTransport(config)

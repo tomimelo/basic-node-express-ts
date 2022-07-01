@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 // Gets all non-builtin properties up the prototype chain.
 const getAllProperties = (object: any): any => {
   const properties = new Set()

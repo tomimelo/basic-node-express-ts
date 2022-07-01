@@ -4,11 +4,11 @@ import { ExampleService } from './example-service'
 
 // Extend class controller from BaseController to autoBind methods and be compatible with express route handler
 export class ExampleController extends BaseController {
-  constructor (private readonly exampleService: ExampleService) {
+  public constructor (private readonly exampleService: ExampleService) {
     super()
   }
 
-  async getExamples (req: Request, res: Response): Promise<void> {
+  public async getExamples (req: Request, res: Response): Promise<void> {
     const examples = await this.exampleService.getExamples()
     res.json({
       ok: true,
@@ -16,7 +16,7 @@ export class ExampleController extends BaseController {
     })
   }
 
-  async createExample (req: Request, res: Response): Promise<void> {
+  public async createExample (req: Request, res: Response): Promise<void> {
     const example = req.body
     const exampleCreated = await this.exampleService.createExample(example)
     res.json({

@@ -5,7 +5,7 @@ import { loggerAcquirer } from '../../utils/logger-acquirer/logger-acquirer'
 const logger = loggerAcquirer.acquire().child('ExampleController')
 
 export default {
-  example: async (req: Request, res: Response, next: NextFunction) => {
+  example: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       logger.info('Example controller')
       res.json({ ok: true, msg: 'Ok!' })

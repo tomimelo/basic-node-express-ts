@@ -1,11 +1,11 @@
-import { Logger } from 'mad-logger'
+import { Logger } from '../../types/logger'
 import { loggerAcquirer } from '../../utils/logger-acquirer/logger-acquirer'
 import { DatabaseConnector } from '../database-connector'
 import { ExampleConnectorConfig } from './example-connector-config'
 
 export class ExampleConnector implements DatabaseConnector {
   private logger: Logger
-  constructor (private readonly config: ExampleConnectorConfig) {
+  public constructor (private readonly config: ExampleConnectorConfig) {
     this.logger = loggerAcquirer.acquire().child('ExampleConnector')
   }
 
