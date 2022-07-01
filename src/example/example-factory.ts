@@ -1,4 +1,5 @@
 import { Repository } from '../db/repository'
+import { loggerAcquirer } from '../utils/logger-acquirer/logger-acquirer'
 import { Example } from './example'
 import { ExampleController } from './example-controller'
 import { ExampleRepository } from './example-repository'
@@ -6,7 +7,8 @@ import { ExampleService } from './example-service'
 
 export class ExampleFactory {
   public getController (): ExampleController {
-    return new ExampleController(this.getService())
+    const logger = loggerAcquirer.acquire().child('ExampleController')
+    return new ExampleController(this.getService(), logger)
   }
 
   public getService (): ExampleService {

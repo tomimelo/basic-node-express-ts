@@ -1,28 +1,28 @@
 import { body } from 'express-validator'
-import { MadRouter } from 'mad-server'
+import { MadRoute, MadRouteMethod, MadRouter } from 'mad-server'
 import { ExampleFactory } from '../../example/example-factory'
 import exampleController from '../controllers/example.controller'
 import validateRequest from '../middlewares/validateRequest'
 
 // Normal functional controller
-const getExample = {
+const getExample: MadRoute = {
   path: '/',
-  method: 'GET',
+  method: MadRouteMethod.GET,
   handler: exampleController.example
 }
 
 // Class based controllers
 const exampleClassController = new ExampleFactory().getController()
 
-const getClassExample = {
+const getClassExample: MadRoute = {
   path: '/class',
-  method: 'GET',
+  method: MadRouteMethod.GET,
   handler: exampleClassController.getExamples
 }
 
-const postClassExample = {
+const postClassExample: MadRoute = {
   path: '/class',
-  method: 'POST',
+  method: MadRouteMethod.POST,
   middlewares: [body('field1').exists(), body('field2').isString(), validateRequest],
   handler: exampleClassController.createExample
 }
