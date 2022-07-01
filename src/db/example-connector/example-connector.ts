@@ -21,7 +21,7 @@ export class ExampleConnector implements DatabaseConnector {
 
   private async setup (): Promise<void> {
     this.logger.info('Setting up database...')
-    //Here you can initialize the db with some data if you need to
+    // Here you can initialize the db with some data if you need to
     this.logger.info('✓ Database set up completed')
   }
 }

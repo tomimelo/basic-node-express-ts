@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { BaseController } from '../lib/base-controller/base-controller'
 import { ExampleService } from './example-service'
 
-//Extend class controller from BaseController to autoBind methods and be compatible with express route handler
+// Extend class controller from BaseController to autoBind methods and be compatible with express route handler
 export class ExampleController extends BaseController {
   constructor (private readonly exampleService: ExampleService) {
     super()

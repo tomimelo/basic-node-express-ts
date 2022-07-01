@@ -1,17 +1,17 @@
-import { body } from 'express-validator';
+import { body } from 'express-validator'
 import { MadRouter } from 'mad-server'
-import { ExampleFactory } from '../../example/example-factory';
-import exampleController from '../controllers/example.controller';
-import validateRequest from '../middlewares/validateRequest';
+import { ExampleFactory } from '../../example/example-factory'
+import exampleController from '../controllers/example.controller'
+import validateRequest from '../middlewares/validateRequest'
 
-//Normal functional controller
+// Normal functional controller
 const getExample = {
   path: '/',
   method: 'GET',
   handler: exampleController.example
 }
 
-//Class based controllers
+// Class based controllers
 const exampleClassController = new ExampleFactory().getController()
 
 const getClassExample = {
@@ -27,12 +27,11 @@ const postClassExample = {
   handler: exampleClassController.createExample
 }
 
-
 const router = new MadRouter({
   basePath: '/example',
   name: 'Example',
   handlers: [
-    getExample, 
+    getExample,
     getClassExample,
     postClassExample
   ]

@@ -1,4 +1,4 @@
-import autoBind from "../autoBind";
+import autoBind from '../autoBind'
 
 export abstract class BaseController {
   constructor () {
