@@ -1,3 +1,4 @@
+import { NextFunction } from 'express'
 import autoBind from '../autoBind'
 
 export abstract class BaseController {
@@ -5,5 +6,5 @@ export abstract class BaseController {
     autoBind(this)
   }
 
-  public abstract handleError (error: any): void
+  public abstract handleError (error: any, next: NextFunction): void
 }

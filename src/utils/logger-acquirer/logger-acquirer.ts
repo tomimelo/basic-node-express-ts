@@ -1,9 +1,8 @@
-import { MadLoggerManager } from 'mad-logger'
+import { MadLogger, MadLoggerManager } from 'mad-logger'
 import path from 'path'
-import { Logger } from '../../types/logger'
 
 class LoggerAcquirer {
-  private logger: Logger
+  private logger: MadLogger
   public constructor (config: any) {
     const loggerManager = new MadLoggerManager()
     const consoleTransport = loggerManager.getConsoleTransport()
@@ -12,7 +11,7 @@ class LoggerAcquirer {
     this.logger = loggerManager.createLogger('Root')
   }
 
-  public acquire (): Logger {
+  public acquire (): MadLogger {
     return this.logger
   }
 }
